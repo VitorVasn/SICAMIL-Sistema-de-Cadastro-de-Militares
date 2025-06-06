@@ -6,43 +6,40 @@ import jakarta.persistence.*;
 public class Militar {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String saram; // chave primária
+
+    private String nomeCompleto;
+    private String nomeGuerra;
+    private String identidadeMilitar;
+    private String secao;
+    private String turma;
 
     @Enumerated(EnumType.STRING)
     private Patente patente;
 
-    private String nomeCompleto;
-
-    private String nomeGuerra;
-
-    private String saram;
-
-    private String identidadeMilitar;
-
-    private String secao;
-
-    private String turma;
-
     @Enumerated(EnumType.STRING)
     private Situacao situacao;
 
-    // Getters e Setters
+    public Militar() {}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Patente getPatente() {
-        return patente;
-    }
-
-    public void setPatente(Patente patente) {
+    public Militar(String saram, String nomeCompleto, String nomeGuerra, String identidadeMilitar, String secao, String turma, Patente patente, Situacao situacao) {
+        this.saram = saram;
+        this.nomeCompleto = nomeCompleto;
+        this.nomeGuerra = nomeGuerra;
+        this.identidadeMilitar = identidadeMilitar;
+        this.secao = secao;
+        this.turma = turma;
         this.patente = patente;
+        this.situacao = situacao;
+    }
+
+    // Getters e Setters
+    public String getSaram() {
+        return saram;
+    }
+
+    public void setSaram(String saram) {
+        this.saram = saram;
     }
 
     public String getNomeCompleto() {
@@ -59,14 +56,6 @@ public class Militar {
 
     public void setNomeGuerra(String nomeGuerra) {
         this.nomeGuerra = nomeGuerra;
-    }
-
-    public String getSaram() {
-        return saram;
-    }
-
-    public void setSaram(String saram) {
-        this.saram = saram;
     }
 
     public String getIdentidadeMilitar() {
@@ -91,6 +80,14 @@ public class Militar {
 
     public void setTurma(String turma) {
         this.turma = turma;
+    }
+
+    public Patente getPatente() {
+        return patente;
+    }
+
+    public void setPatente(Patente patente) {
+        this.patente = patente;
     }
 
     public Situacao getSituacao() {
