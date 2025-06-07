@@ -2,20 +2,29 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              version="3.0"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
     <persistence-unit name="militarPU" transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <!-- Suas entidades -->
         <class>logica.Militar</class>
         <class>login.Usuario</class>
 
+        <!-- Hibernate detecta automaticamente o provider -->
+
         <properties>
+            <!-- JDBC -->
             <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:militares.db"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:exercito.db"/>
+
+            <!-- Dialeto SQLite com Hibernate 6 -->
             <property name="hibernate.dialect" value="org.hibernate.community.dialect.SQLiteDialect"/>
+
+            <!-- Hibernate config -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

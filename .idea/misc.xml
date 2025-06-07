@@ -8,7 +8,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+  <component name="ProjectResources">
+    <resource url="https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd" location="$PROJECT_DIR$" />
+    <default-html-doctype>jar:file:\C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.3\lib\app.jar!\standardSchemas\xhtml1-transitional.xsd</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="23" project-jdk-type="JavaSDK">
+    <output url="file://$USER_HOME$/Desktop" />
   </component>
 </project>
